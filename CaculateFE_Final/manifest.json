@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "FPT-U Score calculation",
+    "version": "3.21",
+    "description": "FPT University score calculation tool",
+    "permissions": [
+        "storage",
+        "declarativeContent",
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://fap.fpt.edu.vn/Grade/StudentGrade.aspx?*"
+            ],
+            "js": [
+                "jQuery.js",
+                "calculate.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16": "/images/icon.png",
+            "32": "/images/icon.png",
+            "48": "/images/icon.png",
+            "128": "/images/icon.png"
+        }
+    },
+    "icons": {
+        "16": "/images/icon.png",
+        "32": "/images/icon.png",
+        "48": "/images/icon.png",
+        "128": "/images/icon.png"
+    }
+}
