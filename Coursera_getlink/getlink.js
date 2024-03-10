@@ -4,29 +4,27 @@ const waitAndExecute = async () => {
     await new Promise(resolve => setTimeout(resolve, 7500));
 
     console.log("Đã tải xong tài nguyên");
+    // logic chính
     let labelElement = document.querySelector('.cds-formLabel-root');
     let labelForAttribute = labelElement.getAttribute('for');
-
     const startIndex = labelForAttribute.indexOf('~comment');
-    const cutString = labelForAttribute.substring(0, startIndex);
-
+    const id = labelForAttribute.substring(0, startIndex);
     const currentUrl = window.location.href;
-    const startIndexLink = currentUrl.indexOf('submit');
-
-    const finalLink = currentUrl.substring(0, startIndexLink) + 'review/' + cutString;
-    console.log('ID:', cutString);
+    const url = currentUrl.replace("submit","review/")
+    const finalLink = url + id;
+    // kết thúc logic chính
+    console.log('ID:', id);
     console.log('Link:', finalLink);
     chrome.storage.local.set({ "myVariable": finalLink });
     if (finalLink) {
         // alert("Đã tải xong tài nguyên")
-        AppendToast();
+        AppendToast("Đã tải xong tài nguyên");
     }
 };
 
 waitAndExecute();
 
-
-function AppendToast() {
+function AppendToast(msg) {
     const targetElement = document.getElementById("rendered-content");
 
     const newDiv = document.createElement("div");
@@ -36,7 +34,7 @@ function AppendToast() {
     const strongElement = document.createElement("strong");
     strongElement.textContent = "Thông báo:";
     const pElement = document.createElement("p");
-    pElement.textContent = "Đã tải xong tài nguyên";
+    pElement.textContent = msg;
 
     newDiv.appendChild(strongElement);
     newDiv.appendChild(pElement);
