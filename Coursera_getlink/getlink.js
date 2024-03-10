@@ -26,21 +26,15 @@ waitAndExecute();
 
 function AppendToast(msg) {
     const targetElement = document.getElementById("rendered-content");
-
     const newDiv = document.createElement("div");
     newDiv.classList.add("toast");
-
-
     const strongElement = document.createElement("strong");
     strongElement.textContent = "Thông báo:";
     const pElement = document.createElement("p");
     pElement.textContent = msg;
-
     newDiv.appendChild(strongElement);
     newDiv.appendChild(pElement);
-
     targetElement.appendChild(newDiv);
-
     const styleElement = document.createElement("style");
 
     styleElement.textContent = `
@@ -70,16 +64,12 @@ function AppendToast(msg) {
     }
     `;
 
-
     document.head.appendChild(styleElement);
-
     setTimeout(() => {
         strongElement.textContent = "";
         pElement.textContent = "";
         newDiv.style.width = "0";
     }, 2000);
-
-
     setTimeout(() => {
         newDiv.remove();
     }, 3000);
