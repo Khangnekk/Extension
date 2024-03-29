@@ -59,7 +59,7 @@ function calculateGrade() {
     console.log("-------------");
 
     // Thêm dòng kết quả vào mỗi lần tính toán
-    appendPredictionResult(diemtrungbinh, diemgioi,diemdudoan, isEnable,EstimatedFEScore);
+    appendPredictionResult(diemtrungbinh, diemgioi, diemdudoan, isEnable, EstimatedFEScore);
 
     console.log('% FE: ' + percentFE);
     console.log('Diem pass: ' + diemtrungbinh);
@@ -67,8 +67,14 @@ function calculateGrade() {
 
 // Thêm sự kiện cho nút input fees
 $('#ctl00_mainContent_divGrade table caption').append(` -<br>
-    <div style="padding: 0.25em; border: 2px solid #ccc; ">
+    <div style="padding: 0.25em; border: 2px solid #ccc; min-width: 574px ">
     <div style="display:flex; justify-content:center; align-items: center;">
+    <span class="label label-info" style="color: orange; padding: 0; background-color: white; line-height: 1.5; font-weight: bold">
+    <img style="border: 1px solid #ccc;" src="https://play-lh.googleusercontent.com/BFYTO8vhN2ZveSWA7XGoQVwei9cCvpi2je5eyDI2a1WoKxTjJJw5Sv8ULoQEGqAYo0g=w240-h480-rw" width=30 />
+        FAP Toolkit (Mark Report)
+    </span>
+    </div>
+    <div style="display:flex; justify-content:center; align-items: center; margin-top: 0.5em">
         <div>
         <input type="text" id="fees" autofocus  style="margin: 0.25em; height: 30px; line-height: 1.5; font-weight: normal; padding: 0.5em;font-size: smaller" placeholder="Nhập điểm fe bạn dự đoán mình sẽ nhận được vào đây">
         </div>
@@ -87,15 +93,11 @@ $('#ctl00_mainContent_divGrade table caption').append(` -<br>
     </div>`);
 
 // Hàm để thêm dòng kết quả FE vào sau mỗi lần bấm nút
-function appendPredictionResult(diemtrungbinh, diemgioi,diemdudoan, isEnable,EstimatedFEScore) {
+function appendPredictionResult(diemtrungbinh, diemgioi, diemdudoan, isEnable, EstimatedFEScore) {
     if (isEnable == true) {
         $('#ctl00_mainContent_divGrade table caption').find('.feResults').remove();
         $('#ctl00_mainContent_divGrade table caption').append(`
         <div class="feResults" style="padding: 15px; border: 2px solid #ccc; ">
-            <span class="label label-info" style="color: orange; padding: 0; background-color: white; line-height: 1.5; font-weight: bold">
-                <img style="border: 1px solid #ccc;" src="https://play-lh.googleusercontent.com/BFYTO8vhN2ZveSWA7XGoQVwei9cCvpi2je5eyDI2a1WoKxTjJJw5Sv8ULoQEGqAYo0g=w240-h480-rw" width=30 />
-                 FPT University score calculation tool 
-            </span>
             <span class="label label-info" style="color: black; padding: 0; background-color: white; line-height: 1.5; font-weight: normal"> 
                - FE cần :<a style="color: red;">${diemtrungbinh.toFixed(2)}</a> điểm để qua môn
             </span> 
@@ -127,25 +129,25 @@ window.addEventListener("load", (event) => {
     if (url.includes("fap.fpt.edu.vn/Grade/")) {
         isEnable = true;
         calculateGrade();
-        if(btnShowResult!=null)
+        if (btnShowResult != null)
             btnShowResult.style.display = 'none';
     }
-  });
+});
 
-if(btnFees!=null){
+if (btnFees != null) {
     btnFees.addEventListener('click', () => {
         isEnable = false;
         calculateGrade();
     });
 }
-if(btnShowResult!=null){
+if (btnShowResult != null) {
     btnShowResult.addEventListener('click', () => {
         isEnable = true;
         calculateGrade();
         btnShowResult.style.display = 'none';
     });
 }
-if(btnClear!=null){
+if (btnClear != null) {
     btnClear.addEventListener('click', () => {
         $('.feResults').remove();
         btnShowResult.style.display = 'block';
