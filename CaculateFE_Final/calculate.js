@@ -122,6 +122,12 @@ let allSubjectRows = document.querySelectorAll('#ctl00_mainContent_divGrade tabl
 const btnFees = document.getElementById("btnFees");
 const btnShowResult = document.getElementById("btnShowResult");
 const btnClear = document.getElementById("btnClear");
+window.addEventListener("load", (event) => {
+    isEnable = true;
+    calculateGrade();
+    btnShowResult.style.display = 'none';
+  });
+
 btnFees.addEventListener('click', () => {
     isEnable = false;
     calculateGrade();
@@ -129,7 +135,9 @@ btnFees.addEventListener('click', () => {
 btnShowResult.addEventListener('click', () => {
     isEnable = true;
     calculateGrade();
+    btnShowResult.style.display = 'none';
 });
 btnClear.addEventListener('click', () => {
     $('.feResults').remove();
+    btnShowResult.style.display = 'block';
 });
