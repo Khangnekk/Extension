@@ -73,13 +73,15 @@ $('#ctl00_mainContent_divGrade table caption').append(` -<br>
         <input type="text" id="fees" autofocus  style="margin: 0.25em; height: 30px; line-height: 1.5; font-weight: normal; padding: 0.5em;font-size: smaller" placeholder="Nhập điểm fe bạn dự đoán mình sẽ nhận được vào đây">
         </div>
         <div>
-        <button class="btn btn-success" style="margin: 0.25em;" type="button" id="btnFees">Dự đoán</button>
+        <button class="btn btn-success " style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnFees">Dự đoán</button>
         </div>
         <div>
-        <button class="btn btn-primary" style="margin: 0.25em;" type="button" id="btnShowResult">Show FE cần đạt</button>
+        <button class="btn btn-primary" style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnShowResult">Show FE cần đạt</button>
         </div>
         <div>
-        <button class="btn btn-danger" style="margin: 0.25em;" type="button" id="btnClear">Clear All</button>
+        <button class="btn btn-danger" style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnClear">
+           Reset
+        </button>
         </div>
     </div>
     </div>`);
