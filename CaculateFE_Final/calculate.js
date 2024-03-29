@@ -76,7 +76,7 @@ $('#ctl00_mainContent_divGrade table caption').append(` -<br>
         <button class="btn btn-success " style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnFees">Dự đoán</button>
         </div>
         <div>
-        <button class="btn btn-primary" style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnShowResult">Show FE cần đạt</button>
+        <button class="btn btn-primary" style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnShowResult">FE cần ? điểm</button>
         </div>
         <div>
         <button class="btn btn-danger" style="margin: 0.25em; padding: 0.2em 0.75em;" type="button" id="btnClear">
