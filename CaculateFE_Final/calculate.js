@@ -97,20 +97,20 @@ function appendPredictionResult(diemtrungbinh, diemgioi, diemdudoan, isEnable, E
     if (isEnable == true) {
         $('#ctl00_mainContent_divGrade table caption').find('.feResults').remove();
         $('#ctl00_mainContent_divGrade table caption').append(`
-        <div class="feResults" style="padding: 15px; border: 2px solid #ccc; ">
+        <div class="feResults" style="padding: 3px 15px; border: 2px solid #ccc; ">
             <span class="label label-info" style="color: black; padding: 0; background-color: white; line-height: 1.5; font-weight: normal"> 
-               - FE cần :<a style="color: red;">${diemtrungbinh.toFixed(2)}</a> điểm để qua môn
+               - FE cần :<a style="color: blue;">${diemtrungbinh.toFixed(2)}</a> điểm để qua môn
             </span> 
             <span class="label label-info" style="color: black; padding: 0;background-color: white; line-height: 1.5; font-weight: normal">
-               - FE cần: <a style="color: red;">${diemgioi.toFixed(2)}</a> điểm để average được "8"
+               - FE cần: <a style="color: blue;">${diemgioi.toFixed(2)}</a> điểm để average được <a style="color: green;">"8"</a>
             </span>
         </div>`);
         isEnable = false;
     } else {
         $('#ctl00_mainContent_divGrade table caption').append(`
-        <div class="feResults" style="padding: 15px; border: 2px solid #ccc; ">
+        <div class="feResults" style="padding: 3px 15px; border: 2px solid #ccc; ">
             <span class="label label-info" style="color: black; background-color: white;line-height: 1.5; font-weight: normal">   
-                Bạn dự đoán điểm FE môn này là: ${EstimatedFEScore} => Average: ${diemdudoan.toFixed(2)} 
+                Bạn dự đoán điểm FE môn này là:<a style="color: blue;"> ${EstimatedFEScore} </a>=> Average: <a style="color: blue;">${diemdudoan.toFixed(2)} </a>
             </span>
         </div>`);
     }
