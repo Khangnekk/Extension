@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "FPT-U Score calculation",
+    "name": "FAP Toolkit",
     "version": "3.21",
-    "description": "FPT University score calculation tool",
+    "description": "FAP Toolkit",
     "permissions": [
         "storage",
         "declarativeContent",
@@ -11,7 +11,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://fap.fpt.edu.vn/Grade/StudentGrade.aspx?*"
+                "*://fap.fpt.edu.vn/*"
             ],
             "js": [
                 "jQuery.js",

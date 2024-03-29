@@ -123,21 +123,31 @@ const btnFees = document.getElementById("btnFees");
 const btnShowResult = document.getElementById("btnShowResult");
 const btnClear = document.getElementById("btnClear");
 window.addEventListener("load", (event) => {
-    isEnable = true;
-    calculateGrade();
-    btnShowResult.style.display = 'none';
+    var url = window.location.href;
+    if (url.includes("fap.fpt.edu.vn/Grade/")) {
+        isEnable = true;
+        calculateGrade();
+        if(btnShowResult!=null)
+            btnShowResult.style.display = 'none';
+    }
   });
 
-btnFees.addEventListener('click', () => {
-    isEnable = false;
-    calculateGrade();
-});
-btnShowResult.addEventListener('click', () => {
-    isEnable = true;
-    calculateGrade();
-    btnShowResult.style.display = 'none';
-});
-btnClear.addEventListener('click', () => {
-    $('.feResults').remove();
-    btnShowResult.style.display = 'block';
-});
+if(btnFees!=null){
+    btnFees.addEventListener('click', () => {
+        isEnable = false;
+        calculateGrade();
+    });
+}
+if(btnShowResult!=null){
+    btnShowResult.addEventListener('click', () => {
+        isEnable = true;
+        calculateGrade();
+        btnShowResult.style.display = 'none';
+    });
+}
+if(btnClear!=null){
+    btnClear.addEventListener('click', () => {
+        $('.feResults').remove();
+        btnShowResult.style.display = 'block';
+    });
+}
