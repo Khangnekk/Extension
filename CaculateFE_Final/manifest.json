@@ -3,6 +3,9 @@
     "name": "FAP Toolkit",
     "version": "3.21",
     "description": "FAP Toolkit",
+    "background": {
+        "service_worker": "background.js"
+      },
     "permissions": [
         "storage",
         "declarativeContent",
