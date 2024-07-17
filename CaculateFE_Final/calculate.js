@@ -187,6 +187,11 @@ window.addEventListener("load", (event) => {
     inputDate.type = 'date';
     inputDate.id = 'selectedDate';
     var sSelectDate = formatDate(sessionStorage.getItem('selectedDate'));
+    inputDate.style.borderRadius = "11px";
+    inputDate.style.textAlign = "center";
+    inputDate.style.border = "transparent";
+    inputDate.style.padding = "0 0.25em";
+
     inputDate.value = sSelectDate;
     var thElements = document.querySelectorAll('table th');
 var isFirstThProcessed = false; 

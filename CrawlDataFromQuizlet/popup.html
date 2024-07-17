@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the xlsx library -->
+    <script src="libs/xlsx.full.min.js"></script>
+    <style>
+        #loading {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <p>Loading...</p>
+        <img src="/images/loading.gif" height="200"/>
+    </div>
+    <div class="container" id="content">
+        <h1>Crawl data from quizlet</h1>
+        <button id="export-btn">Export</button>
+        <p id="message"></p>
+        <input type="text" name="flashcardSetName" style="display: none;" required id="flashcardSetName"
+            placeholder="Enter flashcard name">
+        <div class="space-between">
+            <div>
+                <button id="download-btn" style="display: none;">Download XLSX</button>
+            </div>
+            <div>
+                <button id="send-btn" style="display: none;">Send Data to Server</button>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
